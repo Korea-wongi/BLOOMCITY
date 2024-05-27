@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: project
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+    url: jdbc:mysql://localhost:3306/TRAVEL?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: Abcd123@
+
+  mvc:
+    view:
+      prefix: /WEB-INF/views/
+      suffix: .jsp
+    static-path-pattern: /**
+    hiddenmethod:
+      filter:
+        enabled: true
+        
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: team.project.adm333
+    password: jllmruglygbbfefq
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+  
+# 추가
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+server:
+  port: 8081
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: travel.project.domain
+  configuration:
+    map-underscore-to-camel-case: true
+
+logging.:
+  level:
+    travel.project.repository: trace
+    travel.project.service: debug

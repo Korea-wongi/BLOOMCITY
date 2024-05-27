@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="travel.project.mapper.HotelMapper">
+
+
+	<select id="hotelsInquiry">
+		SELECT hotels.*, GROUP_CONCAT(hotels_img.Img_Name) AS
+		ImgNames
+		FROM hotels
+		LEFT JOIN hotels_img ON hotels.hotel_id = hotels_img.hotel_id
+		GROUP BY hotels.hotel_id
+		ORDER BY hotels.destination_name DESC;
+
+	</select>
+
+
+
+
+	<select id="hotelsCorrection">
+		SELECT Amenity FROM HotelAmenities WHERE Hotel_ID =
+		#{hotelId}
+	</select>
+
+	<update id="saveHotelCorrection">
+		UPDATE hotels
+		SET Hotel_Name = #{hotelName},
+		Destination_name =
+		#{destinationName},
+		Star_Rating = #{starRating},
+		Description =
+		#{description}
+		<where>
+			hotel_Id = #{hotelId}
+
+		</where>
+	</update>
+
+
+	<delete id="deletAmenities">
+		DELETE FROM hotelAmenities WHERE Hotel_ID= #{hotelId}
+
+	</delete>
+
+	<insert id="saveHotelAmenitiesCorrection">
+		INSERT INTO hotelAmenities(Hotel_ID, Amenity) VALUES
+		<foreach item="amenity" collection="amenities" separator=",">
+			(#{hotelId}, #{amenity})
+		</foreach>
+	</insert>
+
+
+	<delete id="hotelImgDelete">
+		DELETE FROM hotels_img WHERE hotel_id=#{hotelId}
+	</delete>
+
+
+	<insert id="saveHotelImgCorrection">
+		INSERT INTO hotels_img(Img_Name, hotel_id) VALUES
+		<foreach item="imgName" collection="imgNames" separator=",">
+			(#{imgName}, #{hotelId})
+		</foreach>
+	</insert>
+
+
+
+</mapper>

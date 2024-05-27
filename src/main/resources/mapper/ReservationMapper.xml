@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="travel.project.mapper.ReservationMapper">
+	
+	
+	<insert id="saveRsv" parameterType="travel.project.domain.Reservation">
+		insert into Reservations (Customer_ID, Pack_ID, Reservation_Date, Number_of_People)
+		values (#{customerId}, #{packId}, #{reservationDate}, #{numberOfPeople})
+	</insert>
+
+</mapper>

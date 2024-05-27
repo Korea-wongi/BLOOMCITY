@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="travel.project.mapper.CustomerMapper">
+
+    <insert id="save" parameterType="customer">
+        INSERT INTO customer (customer_id,password,name, email, phone_number, address)
+        values (#{customerId},#{password},#{name}, #{email}, #{phoneNumber}, #{address})
+    </insert>
+	
+
+
+
+	<select id="verificationId" parameterType="String" resultType="java.lang.String">
+	        SELECT 
+	            CASE 
+	                WHEN COUNT(*) = 1 THEN 'true'
+	                ELSE 'false'
+	            END AS result
+	        FROM 
+	            customer
+	        WHERE 
+	            customer_Id = #{customerId}
+	</select>
+	
+	
+	<select id="verificationEmail" parameterType="String" resultType="java.lang.String">
+	        SELECT 
+	            CASE 
+	                WHEN COUNT(*) = 1 THEN 'true'
+	                ELSE 'false'
+	            END AS result
+	        FROM 
+	            customer
+	        WHERE 
+	            email = #{email}
+	</select>	
+	
+
+	<select id="verificationPhoneNumber" parameterType="String" resultType="java.lang.String">
+		        SELECT 
+		            CASE 
+		                WHEN COUNT(*) = 1 THEN 'true'
+		                ELSE 'false'
+		            END AS result
+		        FROM 
+		            customer
+		        WHERE 
+		            phone_Number = #{phoneNumber}
+	</select>
+
+    <select id="findById" resultType="Customer">
+        select * from customer
+        where customer_id = #{customerId}
+    </select>
+
+    <update id="update">
+        update customer set name = #{name}, email = #{email}, phone_number = #{phoneNumber}, address = #{address}
+        where customer_id = #{customerId}
+    </update>
+
+    <insert id="kakao" parameterType="customer" >
+        INSERT INTO customer (customer_id,name, email)
+        values (#{customerId},#{name}, #{email})
+    </insert>
+
+	<update id="kakaoUpdate">
+        update customer set phone_number = #{phoneNumber}, address = #{address}
+        where customer_id = #{customerId}
+    </update>
+
+
+</mapper>
