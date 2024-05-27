@@ -9,8 +9,7 @@
 
 ## 참고 사이트
 [하나투어](https://www.hanatour.com/)
-[네이버 바로가기](http://www.naver.com/)
-![노랑풍선]((https://pkg.ybtour.co.kr/index.yb))
+[노랑풍선](https://pkg.ybtour.co.kr/)
 
 
 ## :mortar_board: 목차
