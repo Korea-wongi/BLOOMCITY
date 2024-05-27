@@ -8,7 +8,8 @@
 #### 코로나 이후 많아진 여행 수요에 맞게 패키지를 구성해 여행을 할 수 있도록 여행사 웹 개설
 
 ## 참고 사이트
-![하나투어](https://www.hanatour.com/)
+[하나투어](https://www.hanatour.com/)
+[네이버 바로가기](http://www.naver.com/)
 ![노랑풍선]((https://pkg.ybtour.co.kr/index.yb))
 
 
