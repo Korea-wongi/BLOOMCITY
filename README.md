@@ -21,7 +21,7 @@
 ### :computer: 기술 스택
 #### Platform
 ![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![Eclipse](https://img.shields.io/badge/EclipseSTS-0078D6.svg?style=for-the-badge&logo=Eclipse&logoColor=purple)
+![Eclipse](https://img.shields.io/badge/STS4-0078D6.svg?style=for-the-badge&logo=Eclipse&logoColor=purple)
 ![IntelliJ](https://img.shields.io/badge/IntelliJ-0078D6.svg?style=for-the-badge&logo=intellijidea&logoColor=#000000)
 
 ![apachetomcat](https://img.shields.io/badge/tomcat-0078D6.svg?style=for-the-badge&logo=apachetomcat&logoColor=yellow)
